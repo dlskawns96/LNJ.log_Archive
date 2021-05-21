@@ -1,4 +1,4 @@
-## 앱이 실행될 때
+# 앱 실행시에 초기화 작업하기
 
 <img width="600" alt="launch screen" src="https://www.iosapptemplates.com/wp-content/uploads/2019/02/Screen-Shot-2019-02-18-at-3.38.56-PM.png">
 
