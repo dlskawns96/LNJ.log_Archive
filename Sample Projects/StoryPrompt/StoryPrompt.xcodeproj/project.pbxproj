@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA348EF526820BF50062225D /* StoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA348EF426820BF50062225D /* StoryPromptViewController.swift */; };
 		EA84E0842680710F002FEC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA84E0832680710F002FEC18 /* AppDelegate.swift */; };
 		EA84E0862680710F002FEC18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA84E0852680710F002FEC18 /* SceneDelegate.swift */; };
-		EA84E0882680710F002FEC18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA84E0872680710F002FEC18 /* ViewController.swift */; };
+		EA84E0882680710F002FEC18 /* AddStoryPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA84E0872680710F002FEC18 /* AddStoryPromptViewController.swift */; };
 		EA84E08B2680710F002FEC18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA84E0892680710F002FEC18 /* Main.storyboard */; };
 		EA84E08D2680710F002FEC18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA84E08C2680710F002FEC18 /* Assets.xcassets */; };
 		EA84E0902680710F002FEC18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA84E08E2680710F002FEC18 /* LaunchScreen.storyboard */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA348EF426820BF50062225D /* StoryPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPromptViewController.swift; sourceTree = "<group>"; };
 		EA84E0802680710F002FEC18 /* StoryPrompt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryPrompt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA84E0832680710F002FEC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA84E0852680710F002FEC18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EA84E0872680710F002FEC18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA84E0872680710F002FEC18 /* AddStoryPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryPromptViewController.swift; sourceTree = "<group>"; };
 		EA84E08A2680710F002FEC18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA84E08C2680710F002FEC18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA84E08F2680710F002FEC18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA348EF626820BFA0062225D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA84E0872680710F002FEC18 /* AddStoryPromptViewController.swift */,
+				EA348EF426820BF50062225D /* StoryPromptViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		EA84E0772680710F002FEC18 = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +71,10 @@
 		EA84E0822680710F002FEC18 /* StoryPrompt */ = {
 			isa = PBXGroup;
 			children = (
+				EA348EF626820BFA0062225D /* View Controllers */,
 				EA84E09726807215002FEC18 /* Model */,
 				EA84E0832680710F002FEC18 /* AppDelegate.swift */,
 				EA84E0852680710F002FEC18 /* SceneDelegate.swift */,
-				EA84E0872680710F002FEC18 /* ViewController.swift */,
 				EA84E0892680710F002FEC18 /* Main.storyboard */,
 				EA84E08C2680710F002FEC18 /* Assets.xcassets */,
 				EA84E08E2680710F002FEC18 /* LaunchScreen.storyboard */,
@@ -151,8 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA348EF526820BF50062225D /* StoryPromptViewController.swift in Sources */,
 				EA84E09B26807278002FEC18 /* StoryPromptEntry.swift in Sources */,
-				EA84E0882680710F002FEC18 /* ViewController.swift in Sources */,
+				EA84E0882680710F002FEC18 /* AddStoryPromptViewController.swift in Sources */,
 				EA84E0842680710F002FEC18 /* AppDelegate.swift in Sources */,
 				EA84E0862680710F002FEC18 /* SceneDelegate.swift in Sources */,
 				EA84E09A26807278002FEC18 /* StoryPrompts.swift in Sources */,
