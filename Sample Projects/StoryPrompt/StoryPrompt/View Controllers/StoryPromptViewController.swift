@@ -12,18 +12,31 @@ class StoryPromptViewController: UIViewController {
     @IBOutlet var storyPromptTextView: UITextView!
     
     var storyPrompt: StoryPromptEntry?
+    var isNewStoryPrompt = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         storyPromptTextView.text = storyPrompt?.description
+        if isNewStoryPrompt {
+            let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveStoryPrompt))
+            let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancleStoryPrompt))
+            
+            navigationItem.rightBarButtonItem = saveButton
+            navigationItem.leftBarButtonItem = cancelButton
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+    @objc func cancleStoryPrompt() {
+        performSegue(withIdentifier: "CancleStoryPrompt", sender: nil)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+    @objc func saveStoryPrompt() {
+        NotificationCenter.default.post(name: .storyPromptSaved, object: storyPrompt)
+        performSegue(withIdentifier: "SaveStoryPrompt", sender: nil)
     }
+}
+
+extension Notification.Name {
+    static let storyPromptSaved = Notification.Name("StoryPromptSave")
 }

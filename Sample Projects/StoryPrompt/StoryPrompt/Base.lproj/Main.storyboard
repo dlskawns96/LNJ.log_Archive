@@ -143,7 +143,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93" y="319"/>
+            <point key="canvasLocation" x="-33" y="-90"/>
+        </scene>
+        <!--Story Prompt Table View Controller-->
+        <scene sceneID="ced-tw-686">
+            <objects>
+                <tableViewController id="CKR-mo-Npp" customClass="StoryPromptTableViewController" customModule="StoryPrompt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fB5-d8-FPL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryPromptCell" textLabel="xIs-7e-6U7" style="IBUITableViewCellStyleDefault" id="SL2-5P-tXY">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SL2-5P-tXY" id="msC-u4-b1D">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xIs-7e-6U7">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CKR-mo-Npp" id="zBB-GM-vI5"/>
+                            <outlet property="delegate" destination="CKR-mo-Npp" id="ns1-3T-emf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="MbT-En-NFA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kuH-0v-O4J">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="G6G-dy-svr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="IfP-kn-NPl" kind="show" identifier="ShowStoryPrompt" id="i4E-No-bxA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFg-iP-o4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-732" y="357"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O9T-re-cXo">
@@ -154,12 +201,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Bss-kw-Wbj"/>
+                        <segue destination="CKR-mo-Npp" kind="relationship" relationship="rootViewController" id="lNy-R2-wPm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hX-Ol-nJZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-865" y="319"/>
+            <point key="canvasLocation" x="-1409" y="357"/>
         </scene>
         <!--Story Prompt View Controller-->
         <scene sceneID="aEM-9g-qcr">
@@ -198,13 +245,19 @@
                     <navigationItem key="navigationItem" id="0vM-aU-hkU"/>
                     <connections>
                         <outlet property="storyPromptTextView" destination="rMo-Nq-6rN" id="fYp-Xa-1gg"/>
+                        <segue destination="81j-7K-Kki" kind="unwind" identifier="CancleStoryPrompt" unwindAction="cancleStoryPromptWithUnwindSegue:" id="GfY-PE-Uuc"/>
+                        <segue destination="81j-7K-Kki" kind="unwind" identifier="SaveStoryPrompt" unwindAction="saveStoryPromptWithUnwindSegue:" id="dFd-vq-HTm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dN-uy-ysg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="81j-7K-Kki" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="703" y="319"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="byr-xb-iS2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="10.circle" catalog="system" width="128" height="121"/>
         <image name="5.circle" catalog="system" width="128" height="121"/>
@@ -212,6 +265,9 @@
         <image name="object-object_box-of-books" width="1000" height="1000"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
