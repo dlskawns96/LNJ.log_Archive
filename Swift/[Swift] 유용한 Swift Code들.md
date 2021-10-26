@@ -75,4 +75,41 @@ override func viewDidAppear(_ animated: Bool) {
 }
 ```
 
+# 5. Image Tint Color 적용 안될 때
 
+```swift
+let image = UIImage(named: "image_name")?.withRenderingMode(.alwaysTemplate)
+```
+
+# 6. ScrollView Scroll to Bottom 
+
+```swift
+let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
+scrollView.setContentOffset(bottomOffset, animated: true)
+```
+
+
+# 7. Table View frame을 contents에 맞게 (size to fit)
+
+```swift
+final class ContentSizedTableView: UITableView {
+    override var contentSize:CGSize {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+
+    override var intrinsicContentSize: CGSize {
+        layoutIfNeeded()
+        return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
+    }
+}
+
+```
+
+
+# 8. UIButton Alignment 정렬
+
+```swift
+button.contentHorizontalAlignment = .left
+```
