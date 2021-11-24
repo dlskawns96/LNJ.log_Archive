@@ -113,3 +113,40 @@ final class ContentSizedTableView: UITableView {
 ```swift
 button.contentHorizontalAlignment = .left
 ```
+
+# 9. UITextField Left Padding
+
+```swift
+extension UITextField {
+    func addLeftPadding(value: Double) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: value, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = ViewMode.always
+    }
+}
+
+```
+
+# 10. UICollectionViewCell corner radius 동일하게 적용하기
+
+```swift
+self.layer.cornerRadius = 10.0
+self.layer.masksToBounds = true
+```
+
+# 11. RxSwift scan()으로 UITextField, UITextView 글자 수 제한하기
+
+```swift
+myTextField.rx.text.orEmpty
+    .asObservable()
+    .scan("") { old, new in
+        // 정규식 처리도 여기서 가능
+        if new.count > 30 {
+            return old
+        } else {
+            return new
+        }
+    }
+    .bind(to: myTextField.rx.text)
+    .disposed(by: disposeBag)
+```
